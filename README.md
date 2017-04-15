@@ -1,8 +1,11 @@
-# Sample service script for debianoids
+# Simple service script and wizard for debian
+
+
 
 Look at [LSB init scripts](http://wiki.debian.org/LSBInitScripts) for more information.
 
-## Usage
+## Usage 
+You can use the script **service.sh** directly
 
 Copy to `/etc/init.d`:
 
@@ -45,22 +48,27 @@ Don't want it? Remove lines 56-58 of the service's script.
 
 Your service will log its output to `/var/log/$NAME.log`. Don't forget to setup a logrotate :)
 
-## I'm noob and/or lazy
+## You can also use the wizard (service-wiz.sh)
 
-Yep, I'm lazy too. But still, I've written a script to automate this :)
+You can either download and run it locally or you can use the command below:
 
 ```sh
-wget 'https://raw.github.com/gist/4275302/new-service.sh' && bash new-service.sh
+wget 'https://raw.githubusercontent.com/topeysoft/service-wizard/master/service-wiz.sh' && bash service-wiz.sh
 ```
 
 In this script I will download `service.sh` into a `tempfile`, replace some tokens, and then show you commands you should run as superuser.
 
-If you feel confident enough with my script, you can `sudo` the script directly:
+If you feel confident enough with the script, you can `sudo` the script directly:
 
 ```sh
-wget 'https://raw.github.com/gist/4275302/new-service.sh' && sudo bash new-service.sh
+wget 'https://raw.githubusercontent.com/topeysoft/service-wizard/master/service-wiz.sh' && sudo bash service-wiz.sh
 ```
 
+
+NOTE: This script is based on [Nicolas Chambrier](https://gist.github.com/naholyr)'s script and it's NOT yet tested by me.
+      Original script gist can be found here: [https://gist.github.com/naholyr/4275302](https://gist.github.com/naholyr/4275302)
+
+<!--
 Note: the cool hipsterish `curl $URL | bash` won't work here, I don't really want to check why.
 
 ### Demo
@@ -75,4 +83,4 @@ Looking at service files (logs, pid):
 
 Uninstalling service:
 
-![service-uninstall](http://dl.dropbox.com/u/6414656/gist-4275302/service-uninstall.png)
+![service-uninstall](http://dl.dropbox.com/u/6414656/gist-4275302/service-uninstall.png)-->
