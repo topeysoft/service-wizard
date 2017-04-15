@@ -45,8 +45,8 @@ echo ""
 
 echo "--- Installation ---"
 if [ ! -w /etc/init.d ]; then
-  echo "You don't gave me enough permissions to install service myself."
-  echo "That's smart, always be really cautious with third-party shell scripts!"
+  echo "I don't have enough permissions to install service myself."
+  echo "That's smart though, always be really cautious with running automated shell scripts!"
   echo "You should now type those commands as superuser to install and run your service:"
   echo ""
   echo "   mv \"$SERVICE_FILE\" \"/etc/init.d/$NAME\""
