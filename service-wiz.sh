@@ -24,7 +24,7 @@ prompt_token() {
   done
   VAL=$(printf '%q' "$VAL")
   eval $1=$VAL
-  sed -i "s/<$1>/$(printf '%q' "$VAL")/g" $SERVICE_FILE
+  sed -i "s#<$1>#$(printf '%q' "$VAL")#g" $SERVICE_FILE
 }
 
 prompt_token 'NAME'        'Service name'
